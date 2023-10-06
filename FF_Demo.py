@@ -345,6 +345,7 @@ class RNN:
 			inp, targ = inps_and_targs(dt=p['dt'], **kwargs)[0:2]
 			self.run(inp)
 		print('')
+		input_output_pairs = []
 
 		inp, targ = inps_and_targs(dt=p['dt'], **kwargs)[0:2]
 		test_fig = plt.figure()
@@ -381,13 +382,14 @@ class RNN:
 			line_out.set_ydata(out)
 			ax.set_title('RNN Testing, trial %g' % (idx+1))
 			test_fig.canvas.draw()
-			
+			input_output_pairs.append((inp,targ,out))
 			E_out = E_out + np.dot(np.transpose(out-targ), out-targ)
 			V_targ = V_targ + np.dot(np.transpose(targ), targ)
 		print('')
 		E_norm = E_out/V_targ
-		print('Normalized error: %g' % E_norm)
-		return E_norm
+		#print('Normalized error: %g' % E_norm)
+		return input_output_pairs
+
 
 
 
