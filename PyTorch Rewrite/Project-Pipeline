@@ -1,0 +1,15 @@
+1. System Design
+- Folder Structure and Organization
+- Naming convention 
+- Config file to train model / store training parameters
+- 
+
+2. Code Rewrite
+- Parameter Flexibility
+- Experimental function rewrite
+- Feedforward layers
+- PyTorch implementation 
+- Optuna integration (exploring parameter space) 
+
+
+

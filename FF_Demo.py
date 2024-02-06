@@ -90,6 +90,7 @@ class RNN:
 										npr.randn(1,activity.shape[1]) * p['noise_std'])
 			return activity + dx
 
+        
 		def rnn_output(activity):
 			return np.dot(np.tanh(activity), rnn_params['out_weights'])
 
